@@ -1,6 +1,7 @@
 const { Client, Collection } = require("discord.js");
 const { config } = require("dotenv");
 const fs = require("fs");
+const chalk = require('chalk');
 
 var d = new Date();
 
@@ -22,11 +23,9 @@ config({
 });
 
 client.on('ready', () => {
-    console.log('ready')
+    console.log(chalk.greenBright(`Logged into ${client.user.username} at ${new Date().toLocaleString()}`));
     client.user.setActivity('the bachelorette', {type: 5})
 });
-
-console.log(d.toLocaleString());
 
 client.on("message", async message => {
     const prefix = "_";
