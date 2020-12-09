@@ -1,6 +1,7 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
 const { getMember, formatDate } = require("../../functions.js");
+const chalk = require('chalk');
 
 module.exports = {
     name: "whois",
@@ -38,6 +39,6 @@ module.exports = {
             embed.addField('Currently playing', stripIndents`**> Name:** ${member.user.presence.game.name}`);
 
         message.channel.send(embed);
-        console.log("\x1b[33m%s\x1b[0m","Command run: whois")
+        console.log(chalk.magenta(`${new Date().toLocaleString()} - Command run: whois`));
     }
 }
