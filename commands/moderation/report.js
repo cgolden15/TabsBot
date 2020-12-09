@@ -1,5 +1,6 @@
 const { RichEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
+const chalk = require('chalk');
 
 module.exports = {
     name: "report",
@@ -44,7 +45,7 @@ module.exports = {
             **> Reported by:** ${message.member}
             **> Reported in:** ${message.channel}
             **> Reason:** ${args.slice(1).join(" ")}`);
-            console.log("\x1b[35m%s\x1b[0m","Command Executed: Report [Successful]")
+            console.log(chalk.magenta(`${new Date().toLocaleString()} - Command Executed: Report [Successful]`)); 
         return channel.send(embed);
     }
 }
