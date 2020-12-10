@@ -9,8 +9,12 @@ module.exports = {
     category: "admin",
     aliases: ["kill", "godie"],
     run: async (client, message, args) => {
-        if(Developers.includes(message.author.id));{
-            const msg = await message.channel.send('You own the bot')
+       
+        if (Developers.includes(message.author.id)); {
+            const msg = await message.channel.send('You own the bot');
+        
+        } else {
+            const msg = await message.channel.send('you dont own the bot')
         }
     }
 }
